@@ -1,15 +1,11 @@
-.. class:: center   
-
-                    GNU GENERAL PUBLIC LICENSE
-.. class:: center
-
+                     ============================     
+                      GNU GENERAL PUBLIC LICENSE
+                     ============================
                        Version 3, 29 June 2007
 
  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
-
-.. class:: center
 
                             Preamble
 
@@ -73,10 +69,9 @@ patents cannot be used to render the program non-free.
 
   The precise terms and conditions for copying, distribution and
 modification follow.
-
-.. class:: center
-
+                          
                        TERMS AND CONDITIONS
+                       --------------------
 
   0. Definitions.
 
