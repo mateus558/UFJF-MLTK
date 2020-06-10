@@ -75,6 +75,6 @@ Feel free to contact me at any time to clear doubts that you could have and if y
    :hidden:
    
    contribute/codeconduct
-   LICENSE.rst
+   license.rst
 
 
