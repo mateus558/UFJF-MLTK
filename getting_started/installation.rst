@@ -48,7 +48,10 @@ The project can be compiled using the same commands in any system, the only diff
     cmake ..
     cmake --build . --target install
 
-``CMake`` can produce build systems for several compilers, if you have more than one C++ compiler in your operational system you can especify which one you want to use by adding the flag -G to CMake, for example, if you want to configure the project for Visual Studio, you could execute the command as ``cmake .. -G "Visual Studio 16 2019" and then open the generated project on it.
+``CMake`` can produce build systems for several compilers, if you have more than one C++ compiler in your operational
+system you can especify which one you want to use by adding the flag -G to CMake, for example, if you want to configure
+project for Visual Studio, you could execute the command as ``cmake .. -G "Visual Studio 16 2019"`` and then open the
+generated project on it.
 
 UFJF-MLTK was projected to be as modular as possible, so if you don't want to compile some module, you could just turn off it's configuration on cmake, keeping in mind that it would be compiled in the same way if it's a dependency for another module to be compiled. The available options to be set on cmake are listed below:
 

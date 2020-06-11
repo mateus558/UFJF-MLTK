@@ -20,3 +20,4 @@ docs/api
 GUI
 _build
 CLI
+venv
