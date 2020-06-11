@@ -2,7 +2,9 @@
 Installation
 ============
 
-As one of the main pourposes of UFJF-MLTK is the easy of use, the compilation and installation can't be different, for that the project was made using the cross-platform build management tool ``cmake`` as most of the known C++ open source projects.
+As one of the main pourposes of UFJF-MLTK is the easy of use, the compilation and installation can't be different, for
+that the project was made using the cross-platform build management tool ``cmake`` as most of the known C++ open source
+projects.
 
 Requirements
 ------------
@@ -39,7 +41,10 @@ Command to install all necessary GUI dependencies on Arch linux:
 Build on any system
 -------------------
 
-The project can be compiled using the same commands in any system, the only difference is that on`Windows`` you'll need to make sure that the folder containing UFJF-MLTK is in your include path, so you can use include statements as ``#include <UFJF-MLTK/Core/Data.hpp>``. For the standart instalation you only need to execute the following commands on the project folder:
+The project can be compiled using the same commands in any system, the only difference is that on`Windows`` you'll need
+to make sure that the folder containing UFJF-MLTK is in your include path, so you can use include statements as
+``#include <UFJF-MLTK/Core/Data.hpp>``. For the standart instalation you only need to execute the following commands on
+the project folder:
 
 .. code-block:: cpp
     
@@ -53,7 +58,9 @@ system you can especify which one you want to use by adding the flag -G to CMake
 project for Visual Studio, you could execute the command as ``cmake .. -G "Visual Studio 16 2019"`` and then open the
 generated project on it.
 
-UFJF-MLTK was projected to be as modular as possible, so if you don't want to compile some module, you could just turn off it's configuration on cmake, keeping in mind that it would be compiled in the same way if it's a dependency for another module to be compiled. The available options to be set on cmake are listed below:
+UFJF-MLTK was projected to be as modular as possible, so if you don't want to compile some module, you could just turn
+off it's configuration on cmake, keeping in mind that it would be compiled in the same way if it's a dependency for
+another module to be compiled. The available options to be set on cmake are listed below:
 
 +-----------------------+---------------+-----------------------------------------------------+
 |      CMake option     | Default value |                     Description                     |
