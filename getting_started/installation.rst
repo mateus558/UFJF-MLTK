@@ -13,7 +13,7 @@ Requirements
 * C++ compiler with support to C++17
 * Gnuplot >= 5 (Optional, but needed for the Visualization module)
 
-Command to install all necessary CLI dependencies on Arch linux:
+Command to install all necessary dependencies on Arch linux:
 
 .. code-block:: cpp
 
