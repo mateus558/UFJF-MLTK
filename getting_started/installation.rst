@@ -83,6 +83,13 @@ another module to be compiled. The available options to be set on cmake are list
 +-----------------------+---------------+-----------------------------------------------------+
 
 
+
+Adding UFJF-MLTK libraries to Windows environment
+-------------------------------------------------
+
+You need to enter into "System properties" and the environment variable CPATH with the value pointing to the folder containing the binaries, the default folder is "C:/UFJF-MLTK/bin".
+
+
 Compiling your project including UFJF-MLTK
 ------------------------------------------
 
