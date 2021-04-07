@@ -52,7 +52,8 @@ set_target_properties(res_knn_ens_w_dsml PROPERTIES INSTALL_RPATH_USE_LINK_PATH 
 target_link_libraries(res_knn_ens_w_dsml ${LIBCORE} ${LIBCLASSIFIER} ${LIBENSEMBLE} ${LIBVALIDATION})
 
 set (CMAKE_CXX_STANDARD 17)
+find_package( Threads )
 
 add_executable(res_knn_est_acc res_knn_est_acc.cpp)
 set_target_properties(res_knn_est_acc PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
-target_link_libraries(res_knn_est_acc ${LIBCORE} ${LIBCLASSIFIER} ${LIBENSEMBLE} ${LIBVALIDATION} -ltbb)
+target_link_libraries(res_knn_est_acc ${CMAKE_THREAD_LIBS_INIT} ${LIBCORE} ${LIBCLASSIFIER} ${LIBENSEMBLE} ${LIBVALIDATION} -ltbb)
