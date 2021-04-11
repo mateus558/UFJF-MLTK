@@ -60,6 +60,11 @@ You can access the features values of a point accessing the elemens of the **x**
     for(i = 0; i < dim; i++){
     std::cout << p[i] << std::endl;
     }
+    
+Point expressions
+-----------------
+
+To be written
 
 The Data template
 =================
