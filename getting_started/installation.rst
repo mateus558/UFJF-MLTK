@@ -13,49 +13,23 @@ Requirements
 * C++ compiler with support to C++17
 * Gnuplot >= 5 (Optional, but needed for the Visualization module)
 
-Command to install all necessary dependencies on Arch linux:
-
-.. code-block:: cpp
-
-    sudo pacman -Sy gnuplot
-
-
-Requirements for the graphical interface (Optional)
----------------------------------------------------
-
-* Qt5
-* Qt5::Core
-* Qt5::Widgets
-* Qt5::Gui
-* Qt5::DataVisualization
-* Qt5::Svg
-* Qt5::Charts
-
-Command to install all necessary GUI dependencies on Arch linux:
-
-.. code-block:: cpp
-
-    sudo pacman -Sy qt5-base qt5-charts qt5-datavis3d qt5-svg
-
 
 Build on any system
 -------------------
 
 The project can be compiled using the same commands in any system, the only difference is that on ``Windows`` you'll need
 to make sure that the folder containing UFJF-MLTK is in your include path, so you can use include statements as
-``#include <UFJF-MLTK/Core/Data.hpp>``. For the standart instalation you only need to execute the following commands on
+``#include <ufjfmltk/Core.hpp>``. For the standart instalation you only need to execute the following commands on
 the project folder:
 
 .. code-block:: cpp
     
-    mkdir build
-    cd build
-    cmake ..
-    cmake --build . --target install
+    cmake -B build
+    cmake --build build
 
 ``CMake`` can produce build systems for several compilers, if you have more than one C++ compiler in your operational
 system you can especify which one you want to use by adding the flag -G to CMake, for example, if you want to configure
-project for Visual Studio, you could execute the command as ``cmake .. -G "Visual Studio 16 2019"`` and then open the
+project for Visual Studio, you could execute the command as ``cmake -B build -G "Visual Studio 16 2019"`` and then open the
 generated project on it.
 
 UFJF-MLTK was projected to be as modular as possible, so if you don't want to compile some module, you could just turn
@@ -77,11 +51,6 @@ another module to be compiled. The available options to be set on cmake are list
 +-----------------------+---------------+-----------------------------------------------------+
 | -DBUILD_LIBVALIDATION |       ON      |     Tells if the validation module must be built    |
 +-----------------------+---------------+-----------------------------------------------------+
-| -DBUILD_CLI           |       ON      |    Tells if the console application must be built   |
-+-----------------------+---------------+-----------------------------------------------------+
-| -DBUILD_GUI           |      OFF      |    Tells if the Qt GUI application must be built    |
-+-----------------------+---------------+-----------------------------------------------------+
-
 
 
 Adding UFJF-MLTK libraries to Windows environment

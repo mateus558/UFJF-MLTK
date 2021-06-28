@@ -16,7 +16,7 @@ set of algorithms and tools for machine learning researchers and enthusiasts in 
 
 You can find the API Reference at our repository `Gihub Pages`__.
 
-.. _apipage: https://mateus558.github.io/UFJF-MLTK/
+.. _apipage: https://mateus558.github.io/UFJF-Machine-Learning-Toolkit/
 __ apipage_
 
 **Cite us**
@@ -76,5 +76,3 @@ Feel free to contact me at any time to clear doubts that you could have and if y
    
    contribute/codeconduct
    license.rst
-
-
