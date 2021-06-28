@@ -106,10 +106,14 @@ Also were implemented on the framework common math functions that can be aplied 
 
 This example above only shows a subset of operations that can be applied, for more you can see the list below.
 
-* abs
-* max
-* min
-* ...
+* abs ``mltk::abs(p)`` - absolute values;
+* max ``mltk::max(p)`` - maximum value;
+* min ``mltk::min(p)`` - minimum value;
+* norm ``mltk::norm(p, norm_type)`` - computes the norm of a point, by default ``norm_value = 2``;
+* dot ``mltk::dot(p, q)`` - computes the dot product between *p* and *q*;
+* log ``mltk::log(p)`` - natural log values; 
+* normalize ``mltk::normalize(p, norm_type)`` - normalize a point, by default ``norm_value = 2``;
+* linspace ``mltk::linspace(lower, upper, N)`` - returns a point with *N* linear values from *lower* to *upper*. 
 
 
 We can also print the point content using the stream overload operator.
@@ -128,6 +132,7 @@ You can access the features values of a point accessing the elemens of the **x**
         std::cout << p[i] << std::endl;
     }
 
+    // using iterators
     for(auto it = p.begin(); it != p.end(); it++){
         std::cout << (*it) << std::endl;
     }
@@ -310,3 +315,9 @@ Below are the methods of insertion/removal:
 * insertPoint - insert a point to the dataset;
 * removePoint - remove a point with the given unique id;
 * removeFeature - remove a dimension with the given id (1..dim) from the dataset.
+
+You can see the concepts presented here in practice on the implementation of `algorithms for artificial datasets generation`__.
+
+
+.. _datasetsimp: https://github.com/mateus558/UFJF-Machine-Learning-Toolkit/blob/main/subprojects/ufjfmltk-core/src/Datasets.cpp
+__ datasetsimp_
