@@ -161,7 +161,7 @@ Windows
 
   7 - Click **Finish** button.
 
-Ubuntu and Debian based SOs
+Ubuntu and Debian based OS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Download the ``.deb`` file corresponding to the desired framework release and execute the following command.
@@ -170,7 +170,7 @@ Download the ``.deb`` file corresponding to the desired framework release and ex
 
     sudo dpkg -i ufjfmltk-<version>-Linux-<cpu_architecture>.deb
 
-Other linux based SO
+Other linux based OS
 ^^^^^^^^^^^^^^^^^^^^
 
 Download the ``.run`` file corresponding to the desired framework release and follow these steps.
