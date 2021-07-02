@@ -57,7 +57,7 @@ Including to your CMake project
 
 Following are minimal scripts to include ufjfmltk to your CMake project. The first method is by simply cloning
 ufjfmltk repository into the main project folder and include it with ``add_subdirectory``, it's a good method if
-you wish to use the latest updates on the framework, but it may break your application in future updates. 
+you wish to use the latest updates on the framework, but it may break your application in future updates.:: 
 
 .. code-block:: cpp
 
