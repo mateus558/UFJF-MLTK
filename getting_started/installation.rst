@@ -116,50 +116,6 @@ installers that installs the framework and make it available to all system. You 
 
 .. _releases here: https://github.com/mateus558/UFJF-Machine-Learning-Toolkit/releases
 
-Windows 
-^^^^^^^
-
-.. figure:: images/windows_install/1.png
-  :width: 450
-  :alt: Click **Next** button.
-
-  1 - Click **Next** button.
-
-.. figure:: images/windows_install/2.png
-    :width: 450
-    :alt: Click **I agree** button.
-
-    2 - Click **I agree** button.
-
-.. figure:: images/windows_install/3.png
-  :width: 450
-  :alt: Add ufjfmltk to system PATH so it'll be available to all system and click **Next**.
-
-  3 - Add ufjfmltk to system PATH so it'll be available to all system and click **Next**.
-
-.. figure:: images/windows_install/4.png
-  :width: 450
-  :alt: Click **Next** button.
-
-  4 - Click **Next** button.
-
-.. figure:: images/windows_install/5.png
-  :width: 450
-  :alt: Check **Don't create shortcuts** and click **Next** button.
-
-  5 - Check **Don't create shortcuts** and click **Next** button.
-
-.. figure:: images/windows_install/6.png
-  :width: 450
-  :alt: Click **Install** button
-
-  6 - Click **Install** button.
-
-.. figure:: images/windows_install/7.png
-  :width: 450
-  :alt: Click **Finish** button.
-
-  7 - Click **Finish** button.
 
 Ubuntu and Debian based OS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -170,43 +126,106 @@ Download the ``.deb`` file corresponding to the desired framework release and ex
 
     sudo dpkg -i ufjfmltk-<version>-Linux-<cpu_architecture>.deb
 
+
+
+Windows 
+^^^^^^^
+
+.. figure:: images/windows_install/w1.png
+  :width: 600
+  :align: center
+  :alt: Click **Next** button.
+
+  1 - Click **Next** button.
+
+.. figure:: images/windows_install/w2.png
+    :width: 450
+    :align: center
+    :alt: Click **I agree** button.
+
+    2 - Click **I agree** button.
+
+.. figure:: images/windows_install/w3.png
+  :width: 450
+  :align: center
+  :alt: Add ufjfmltk to system PATH so it'll be available to all system and click **Next**.
+
+  3 - Add ufjfmltk to system PATH so it'll be available to all system and click **Next**.
+
+.. figure:: images/windows_install/w4.png
+  :width: 450
+  :align: center
+  :alt: Click **Next** button.
+
+  4 - Click **Next** button.
+
+.. figure:: images/windows_install/w5.png
+  :width: 450
+  :align: center
+  :alt: Check **Don't create shortcuts** and click **Next** button.
+
+  5 - Check **Don't create shortcuts** and click **Next** button.
+
+.. figure:: images/windows_install/w6.png
+  :width: 450
+  :align: center
+  :alt: Click **Install** button
+
+  6 - Click **Install** button.
+
+.. figure:: images/windows_install/w7.png
+  :width: 450
+  :align: center
+  :alt: Click **Finish** button.
+
+  7 - Click **Finish** button.
+
+
+
+
 Other linux based OS
 ^^^^^^^^^^^^^^^^^^^^
 
 Download the ``.run`` file corresponding to the desired framework release and follow these steps.
 
-.. figure:: images/linux_install/1.png
+.. figure:: images/linux_install/l1.png
     :width: 450
+    :align: center
     :alt: Click **Next** button.
 
     1 - Click **Next** button.
 
-.. figure:: images/linux_install/2.png
+.. figure:: images/linux_install/l2.png
     :width: 450
+    :align: center
     :alt: Choose where do you want to install ufjfmltk.
 
     2- Choose where do you want to install ufjfmltk.
 
-.. figure:: images/linux_install/3.png
+.. figure:: images/linux_install/l3.png
     :width: 450
+    :align: center
     :alt: Click **Next** button.
 
     3 - Click **Next** button.
 
-.. figure:: images/linux_install/4.png
+.. figure:: images/linux_install/l4.png
     :width: 450
+    :align: center
     :alt: Click **Install** button.
 
     4 - Click **Install** button.
 
-.. figure:: images/linux_install/5.png
+.. figure:: images/linux_install/l5.png
     :width: 450
+    :align: center
     :alt: If you had choosen to install the framework in a system folder, you need to provide your ``sudo`` password.
 
     5 - If you had choosen to install the framework in a system folder, you need to provide your ``sudo`` password.
 
-.. figure:: images/linux_install/6.png
+.. figure:: images/linux_install/l6.png
     :width: 450
+    :align: center
     :alt: Click **Finish** button.
 
     6 - Click **Finish** button.
