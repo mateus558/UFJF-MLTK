@@ -104,7 +104,7 @@ Kernel methods
 
 Often in real datasets is not possible to do a linear separation of the data. In these cases is necessary
 to utilize more complex functions for labels separation. One way to define a non-linear separator is through 
-a mapping function from input space :math:`X` to a higher dimensional space where the separation is possible [MEHRYAR2012]_.
+a mapping function from input space :math:`X` to a higher dimensional space where the separation is possible [MEHRYAR2018]_.
 
 
 In models based on a mapping from the fixed non-linear features space :math:`\Phi(x)`, the kernel function is defined
@@ -126,7 +126,7 @@ draw a line that separates the samples belonging to each spiral. In the `Dual Pe
 
   Spirals artificial dataset.
 
-The simplest kernel considering the mapping on Equation :math:numref:`kernel-func` is the linear kernel where 
+The simplest kernel considering the mapping on Eq. :math:numref:`kernel-func` is the linear kernel where 
 :math:`\Phi(x) = x` and :math:`k(x, x^{'}) = x^{T}x`. The kernel concept formulated as a inner product in the 
 input space allows the generalization of many known algorithms. The main idea is that if an algorithm is formulated
 in such a way that the input vector :math:`x` is presented in a scalar product form, the inner product can be replaced
@@ -177,17 +177,112 @@ is set as 500ms, after that, the model is trained and its decision boundary is p
 Multi-class classification
 --------------------------
 
+Until now we've been discussing algorithms for classification problems were we have only two labels, but often we face problems where we need
+to choose a class between tens, hundreds or even thousands of labels, like when we need to assign a label to an object in an image. In this chapter, we'll 
+be analysing the problem of multi-class classification learning.
+
+Let :math:`\mathcal{X}` be the input space and :math:`\mathcal{Y}` the output space, and let :math:`\mathcal{D}` be an unknown distribution over :math:`\mathcal{X}` according
+to which input points are drawn. We'll be distinguishing between the *mono-label* (binary classification) and *multi-label* cases, where we define :math:`\mathcal{Y}` as a set 
+of discrete values as :math:`\mathcal{Y} = \{1, \dots, k\}` and :math:`\mathcal{Y} = \{+1, -1\}^{k}` for the *mono-label* and *multi-label* cases, respectively. In the *mono-label* case,
+each sample will be assigned to only one class, while in the *multi-label* there can be several. The latter can be illustrated as the positive value being the component of a vector 
+representing the classes where the example is associated [MEHRYAR2018]_.
+
+On both cases, the learner receives labeled samples :math:`\mathcal{S} = ((x_1, y_1), \dots, (x_m, y_m)) \in (\mathcal{X}, \mathcal{Y})^{m}` with :math:`x_1, \dots, x_m` drawn according
+to :math:`\mathcal{D}`, and :math:`y_i = f(x_i)` for all :math:`i \in [1, \dots, m]`, where :math:`f:\mathcal{X} \rightarrow \mathcal{Y}` is the target labeling function. The multi-class classification problem consists
+of using labeled data :math:`\mathcal{S}` to find a hypothesis :math:`h \in H`, where :math:`H` is a hypothesis set containing functions mapping :math:`\mathcal{X}` to :math:`\mathcal{Y}`. The multi-class classification problem consists on finding the hypothesis :math:`h \in H` using the labeled data :math:`\mathcal{S}`, such that 
+it has smallest generalization error :math:`R(h)` with respect to the target :math:`f`, where Eq. :math:numref:`mono` refers to the *mono-label* case and Eq. :math:numref:`multi` to the *multi-label* case [MEHRYAR2018]_.
+
+.. math::
+  :label: mono
+
+  R(h) = \mathop{\mathbb{E}}_{x \sim \mathcal{D}} [1_{h(x) \neq f(x)}]
+
+.. math::
+  :label: multi
+
+  R(h) = \mathop{\mathbb{E}}_{x \sim \mathcal{D}} [\sum_{l=1}^{k} 1_{[h(x)]_l \neq [f(x)]_l}]
+
+In the following sections we'll be discussing two algorithms for adapting models for binary classification to the multi-class case, namely One-vs-All and One-vs-One. For that,
+the blobs artificial dataset generated with 50 examples for each of 3 labels. The plot for the dataset data can be seen on :numref:`blobs-3class`.
+
 .. figure:: images/classification/blobs.png
   :width: 450
   :align: center
-  :alt: Blobs artificial dataset.
+  :name: blobs-3class
+  :alt: Blobs artificial dataset with 3 labels.
 
   Blobs artificial dataset.
+
+The One-vs-All algorithm
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+This method consists in learning :math:`k` binary classifiers :math:`h_l:\mathcal{X} \rightarrow {-1, +1}`, :math:`l \in \mathcal{Y}`, each one of them 
+designed to discriminate one class from all the others. Each :math:`h_l`, for any :math:`l \in \mathcal{Y}`, is constructed by training a binary classifier after
+relabeling points in class :math:`l` with 1 and all the others as -1 on the full sample :math:`\mathcal{S}`. The multi-class hypothesis :math:`h:\mathcal{X} \rightarrow \mathcal{Y}` defined by the
+One-vs-All (OVA) technique is given by [MEHRYAR2018]_:
+
+.. math::
+
+  \forall x \in \mathcal{X},\; h(x) = \mathop{arg\,max}_{l\in\mathcal{Y}}f_l(x)
+
+:numref:`ova-example` shows how to use the **UFJF-MLTK** primal perceptron implementation with the OVA technique to tackle the blobs dataset classification problem.
+As can be seen, the only thing needed to do is to instantiate the ``OneVsAll`` wrapper and pass the training data and the algorithm wrapper to be used. Something to be noted, is that
+the base algorithm parameters must be passed on its initialization or before calling the OVA ``train`` method.
+
+.. code-block:: cpp
+  :emphasize-lines: 9,10,12
+  :name: ova-example
+  :caption: OVA example with the primal perceptron model.
+
+    #include <ufjfmltk/ufjfmltk.hpp>
+
+    namespace vis = mltk::visualize;
+    namespace classifier = mltk::classifier;
+
+    int main() {
+        auto data = mltk::datasets::make_blobs(50, 3, 2, 1.5, -20, 20, true, true, 10).dataset;
+        vis::Visualization<> vis(data);
+        classifier::PerceptronPrimal<double> perceptron;
+        classifier::OneVsAll<double> ova(data, perceptron);
+
+        ova.train();
+
+        vis.plotDecisionSurface2D(ova, 0, 1, true, 100, true);
+        return 0;
+    }
+
+:numref:`blobs-contour-ova-perc` shows the decision boundary generated after training, it's possible to note that 
+each region drawn accomodates points with the same class, indicating that the technique was effective on learning 
+a aproximation of the data distribution. For non linearly separated data, the only changes is that we need 
+to use an algorithm capable of learning a non-linear function like the dual perceptron from ``PerceptronDual`` wrapper. 
+
+.. figure:: images/classification/contour-blobs-ova.png
+    :width: 450
+    :name: blobs-contour-ova-perc
+    :align: center
+    :alt: Decision contour surface from OVA with perceptron for blobs dataset.
+
+    Decision contour surface from OVA with perceptron for blobs dataset.
 
 The One-vs-One algorithm
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+The One-vs-One (OVO) technique consists in learning a binary classifier :math:`h_{ll^{'}}:\mathcal{X}\rightarrow {-1, +1}` for each pair of distinct classes :math:`(l, l^{'}) \in \mathcal{Y}`, :math:`l \neq l^{'}`, 
+discriminating :math:`l` and :math:`l^{'}`. :math:`h_{ll^{'}}` is obtained by training a binary classifier on the sub-sample containing exactly the points labeled as :math:`l` and :math:`l^{'}`,
+with the value +1 returned for :math:`l^{'}` and -1 for :math:`l`. For that, it's needed to train :math:`\binom{k}{2} = \frac{k(k-1)}{2}` classifiers, which are combined to define a multi-class classification hypothesis :math:`h`
+via majority vote [MEHRYAR2018]_:
+
+.. math::
+
+  \forall x \in \mathcal{X},\; h(x) = \mathop{arg\,max}_{l^{'} \in \mathcal{Y}}| \{l:h_{ll^{'}}(x) = 1\} |
+
+:numref:`ovo-example` is analogous to :numref:`ova-example` except that it's using the ``OneVsOne`` wrapper instead of the OVA one.
+As expected, it could also learn the data distribution, this can be seen by the decision boundary shown at :numref:`blobs-contour-ovo-perc`.
+
 .. code-block:: cpp
+  :emphasize-lines: 9,10,12
+  :name: ovo-example
+  :caption: OVO example with the primal perceptron model.
 
     #include <ufjfmltk/ufjfmltk.hpp>
 
@@ -209,46 +304,18 @@ The One-vs-One algorithm
 
 .. figure:: images/classification/contour-blobs-ovo.png
   :width: 450
+  :name: blobs-contour-ovo-perc
   :align: center
   :alt: Decision contour surface from OVO with perceptron for blobs dataset.
 
   Decision contour surface from OVO with perceptron for blobs dataset.
 
-The One-vs-All algorithm
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: cpp
-
-    #include <ufjfmltk/ufjfmltk.hpp>
-
-    namespace vis = mltk::visualize;
-    namespace classifier = mltk::classifier;
-
-    int main() {
-        auto data = mltk::datasets::make_blobs(50, 3, 2, 1.5, -20, 20, true, true, 10).dataset;
-        vis::Visualization<> vis(data);
-        classifier::PerceptronPrimal<double> perceptron;
-        classifier::OneVsAll<double> ova(data, perceptron);
-
-        ova.train();
-
-        vis.plotDecisionSurface2D(ova, 0, 1, true, 100, true);
-        return 0;
-    }
-
-.. figure:: images/classification/contour-blobs-ova.png
-    :width: 450
-    :align: center
-    :alt: Decision contour surface from OVA with perceptron for blobs dataset.
-
-    Decision contour surface from OVA with perceptron for blobs dataset.
-
-
 Evaluating a classifier performance
 -----------------------------------
+TODO
 
 .. [SKIENA2017] Skiena, Steven S. The data science design manual. Springer, 2017.
 .. [VILLELA2011] Villela, Saulo Moraes, et al. "Seleção de Características utilizando Busca Ordenada e um Classificador de Larga Margem." (2011).
 .. [ROSENBLATT1958] Rosenblatt, Frank. "The perceptron: a probabilistic model for information storage and organization in the brain." Psychological review 65.6 (1958): 386.
-.. [MEHRYAR2012] Mohri, Mehryar, Afshin Rostamizadeh, and Ameet Talwalkar. Foundations of machine learning. MIT press, 2018.
+.. [MEHRYAR2018] Mohri, Mehryar, Afshin Rostamizadeh, and Ameet Talwalkar. Foundations of machine learning. MIT press, 2018.
 .. [BISHOP2007] Biship, Christopher M. "Pattern recognition and machine learning (information science and statistics)." (2007).
