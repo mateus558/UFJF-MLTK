@@ -21,9 +21,7 @@ __ apipage_
 
 **Cite us**
 
-If you use our project in your research, you can cite us by adding the bibtex from the `project paper`__.
-
-.. code-block:: cpp
+If you use our project in your research, you can cite us by adding the bibtex from the `project paper`__::
 
    @inproceedings{10.1145/3330204.3330273,
       author = {Marim, Mateus Coutinho and de Oliveira, Alessandreia Marta and Villela, Saulo Moraes},
