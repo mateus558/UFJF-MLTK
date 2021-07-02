@@ -57,7 +57,7 @@ Feel free to contact me at any time to clear doubts that you could have and if y
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Table of contents
 
 .. toctree::
    :maxdepth: 3
@@ -82,4 +82,4 @@ Feel free to contact me at any time to clear doubts that you could have and if y
    :hidden:
    
    contribute/codeconduct
-   license.rst
+   license

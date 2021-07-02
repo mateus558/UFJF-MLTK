@@ -19,15 +19,19 @@ Let :math:`Z = (x_{i}, y_{i})` be a set of samples of size :math:`m`, where :mat
 :math:`y_{i}` is a scalar representing the class of each vector :math:`x_{i}` and for binary classification :math:`y_{i} \in \{+1,-1\}`,
 for :math:`i = \{1, \dots, m\}`. A linear classifier, in a linearly separable input space, is represented by a hyperplane with the following equation [VILLELA2011]_:
 
-:math:`h(x) = \langle w, x \rangle + b`
+.. math::
+  
+  h(x) = \langle w, x \rangle + b
 
-The classification result can be obtained through a signal function :math:`\psi` applied to the discriminant value associated to the hyperplane equation, i.e:
+The classification result can be obtained through a signal function :math:`\varphi` applied to the discriminant value associated to the hyperplane equation, i.e:
 
-:math:`\psi (h(x)) = +1` if :math:`h(x) \geq 0` 
+.. math::
 
-or 
-
-:math:`\psi (h(x)) = -1` if :math:`h(x) < 0`
+  \varphi (h(x)) = 
+  \begin{cases}
+    +1,& \text{if } h(x) \geq 0\\
+    -1,& \text{otherwise}
+  \end{cases}
 
 .. figure:: images/classification/binclass.png
   :width: 450
