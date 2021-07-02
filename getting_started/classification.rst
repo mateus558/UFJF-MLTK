@@ -19,9 +19,7 @@ Let :math:`Z = (x_{i}, y_{i})` be a set of samples of size :math:`m`, where :mat
 :math:`y_{i}` is a scalar representing the class of each vector :math:`x_{i}` and for binary classification :math:`y_{i} \in \{+1,-1\}`,
 for :math:`i = \{1, \dots, m\}`. A linear classifier, in a linearly separable input space, is represented by a hyperplane with the following equation [VILLELA2011]_:
 
-.. :math::
-
-`h(x) = \langle w, x \rangle + b`
+:math:`h(x) = \langle w, x \rangle + b`
 
 The classification result can be obtained through a signal function :math:`\psi` applied to the discriminant value associated to the hyperplane equation, i.e:
 
