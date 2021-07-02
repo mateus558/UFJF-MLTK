@@ -34,9 +34,9 @@ or
 .. figure:: images/classification/binclass.png
   :width: 450
   :align: center
-  :alt: Click **Next** button.
+  :alt: Example of a binary classification problem with a linear discriminant.
 
-  Exemple of a binary classification problem with a linear discriminant (purple line).
+  Example of a binary classification problem with a linear discriminant.
 
 
 The Perceptron algorithm
@@ -92,7 +92,6 @@ The Perceptron dual algorithm
     int main() {
         auto data = mltk::datasets::make_spirals(500);
         vis::Visualization<> vis(data);
-
         classifier::PerceptronDual<double> perceptron(data, mltk::KernelType::GAUSSIAN, 0.5);
 
         perceptron.train();
@@ -130,14 +129,14 @@ The One-vs-One algorithm
     namespace classifier = mltk::classifier;
 
     int main() {
-        auto data = mltk::datasets::make_blobs(100, 3).dataset;
+        auto data = mltk::datasets::make_blobs(50, 3, 2, 1.5, -20, 20, true, true, 10).dataset;
         vis::Visualization<> vis(data);
         classifier::PerceptronPrimal<double> perceptron;
         classifier::OneVsOne<double> ovo(data, perceptron);
 
         ovo.train();
 
-        vis.plotDecisionSurface2D(ovo, 0, 1, true, 100, true, 1, "", "png");
+        vis.plotDecisionSurface2D(ovo, 0, 1, true, 100, true);
 
         return 0;
     }
@@ -160,7 +159,7 @@ The One-vs-All algorithm
     namespace classifier = mltk::classifier;
 
     int main() {
-        auto data = mltk::datasets::make_blobs(100, 3).dataset;
+        auto data = mltk::datasets::make_blobs(50, 3, 2, 1.5, -20, 20, true, true, 10).dataset;
         vis::Visualization<> vis(data);
         classifier::PerceptronPrimal<double> perceptron;
         classifier::OneVsAll<double> ova(data, perceptron);
