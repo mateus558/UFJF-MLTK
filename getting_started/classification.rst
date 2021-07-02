@@ -161,9 +161,9 @@ we'll use **UFJF-MLTK** implementation to solve the spirals dataset problem pres
     }
 
 :numref:`dualperc-spirals` example generates a spirals 
-dataset with 500 samples using the dataset function from ``mltk::datasets::`` namespace, initialize the visualization object and instantiate the ``PerceptronDual``
+dataset with 500 samples using the ``make_spirals`` function from ``mltk::datasets::`` namespace, initialize the visualization object and instantiate the ``PerceptronDual``
 wrapper with a gaussian kernel with standard deviation of 1.0 as a kernel parameter. To guarantee the algorithm convergence, the maximum training time of the algorithm
-id set as 500ms, after that, the model is trained and its decision boundary is ploted as in :numref:`spirals-dualperc-dec`.
+is set as 500ms, after that, the model is trained and its decision boundary is ploted as in :numref:`spirals-dualperc-dec`.
 
 .. figure:: images/classification/contour-spirals-percdual.png
   :width: 450
