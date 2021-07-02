@@ -59,7 +59,7 @@ Following are minimal scripts to include ufjfmltk to your CMake project. The fir
 ufjfmltk repository into the main project folder and include it with ``add_subdirectory``, it's a good method if
 you wish to use the latest updates on the framework, but it may break your application in future updates. 
 
-.. code-block::
+.. code-block:: cpp
 
     cmake_minimum_required(VERSION 3.15)
     project(project_name)
@@ -73,7 +73,7 @@ you wish to use the latest updates on the framework, but it may break your appli
 The second and most recommended method is by using ``FetchContent``, with this approach you need to select one of the releases on the repository
 and copy the link to its code ``tar.gz`` file, this way you garantee that your project will work even when the framework receive major updates.
 
-.. code-block::
+.. code-block:: cpp
 
     cmake_minimum_required(VERSION 3.15)
     project(project_name)
@@ -122,7 +122,7 @@ Ubuntu and Debian based OS
 
 Download the ``.deb`` file corresponding to the desired framework release and execute the following command.
 
-.. code-block::
+.. code-block:: cpp
 
     sudo dpkg -i ufjfmltk-<version>-Linux-<cpu_architecture>.deb
 
