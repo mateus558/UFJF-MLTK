@@ -60,17 +60,24 @@ Feel free to contact me at any time to clear doubts that you could have and if y
    :caption: Contents:
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Getting Started
+   :maxdepth: 3
+   :caption: Framework overview
    :hidden:
    
-   getting_started/overview
+   overview/modules
+   overview/architecture
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Getting Started
+   :hidden:
+    
    getting_started/installation
    getting_started/datamanagement
    getting_started/classification
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contribute
    :hidden:
    
