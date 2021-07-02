@@ -90,11 +90,12 @@ The Perceptron dual algorithm
     int main() {
         auto data = mltk::datasets::make_spirals(500);
         vis::Visualization<> vis(data);
-        classifier::PerceptronDual<double> perceptron(data, mltk::KernelType::GAUSSIAN, 0.5);
+        classifier::PerceptronDual<double> perceptron(data, mltk::KernelType::GAUSSIAN, 1);
 
+        perceptron.setMaxTime(500);
         perceptron.train();
 
-        vis.plotDecisionSurface2D(perceptron, 0, 1, true);
+        vis.plotDecisionSurface2D(perceptron, 0, 1, true, 100);
         return 0;
     }
 
