@@ -9,7 +9,7 @@ Often we are given the task, from ourselves or from others, to label things acco
 
 *Classification* is the problem of giving the right label to a record given as input. The task is different from regression because 
 here we have discrete labels instead of continuous values [SKIENA2017]_. In this chapter we'll give a brief introduction on binary
-and malti-class classification problems and show how to tackle these problems using **UFJF-MLTK**.
+and multi-class classification tasks and show how to tackle these problems using **UFJF-MLTK**.
 
 Add ``#include <ufjfmltk/Classification.hpp>`` to include the classification module.
 
