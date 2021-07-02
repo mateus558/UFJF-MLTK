@@ -310,12 +310,24 @@ As expected, it could also learn the data distribution, this can be seen by the 
 
   Decision contour surface from OVO with perceptron for blobs dataset.
 
-Evaluating a classifier performance
------------------------------------
-TODO
+Model evaluation and selection
+------------------------------
+
+So far, you may have been able to build a classifier, but only that is not enough. Supose you've trained a model to predict the purchasing behavior of future clients using data from 
+previous sales. For that, you need to estimate how accurately your model can be on unseen data, i.e, how accurately your model can predict the behavior of future customers. You may have built
+several classifiers and need to compare how well they can be between each other [HAN2011]_. This section address metrics that can be used to compare those methods and how reliable this comparison can be.  
+
+
+Holdout method and random subsampling
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Cross-validation
+^^^^^^^^^^^^^^^^
 
 .. [SKIENA2017] Skiena, Steven S. The data science design manual. Springer, 2017.
 .. [VILLELA2011] Villela, Saulo Moraes, et al. "Seleção de Características utilizando Busca Ordenada e um Classificador de Larga Margem." (2011).
 .. [ROSENBLATT1958] Rosenblatt, Frank. "The perceptron: a probabilistic model for information storage and organization in the brain." Psychological review 65.6 (1958): 386.
 .. [MEHRYAR2018] Mohri, Mehryar, Afshin Rostamizadeh, and Ameet Talwalkar. Foundations of machine learning. MIT press, 2018.
-.. [BISHOP2007] Biship, Christopher M. "Pattern recognition and machine learning (information science and statistics)." (2007).
+.. [BISHOP2007] Bishop, Christopher M. "Pattern recognition and machine learning (information science and statistics)." (2007).
+.. [HAN2011] Han, Jiawei, Jian Pei, and Micheline Kamber. Data mining: concepts and techniques. Elsevier, 2011.
