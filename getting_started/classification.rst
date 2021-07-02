@@ -276,9 +276,6 @@ via majority vote [MEHRYAR2018]_:
 
   \forall x \in \mathcal{X},\; h(x) = \mathop{arg\,max}_{l^{'} \in \mathcal{Y}}| \{l:h_{ll^{'}}(x) = 1\} |
 
-:numref:`ovo-example` is analogous to :numref:`ova-example` except that it's using the ``OneVsOne`` wrapper instead of the OVA one.
-As expected, it could also learn the data distribution, this can be seen by the decision boundary shown at :numref:`blobs-contour-ovo-perc`.
-
 .. code-block:: cpp
   :emphasize-lines: 9,10,12
   :name: ovo-example
@@ -301,6 +298,9 @@ As expected, it could also learn the data distribution, this can be seen by the 
 
         return 0;
     }
+
+:numref:`ovo-example` is analogous to :numref:`ova-example` except that it's using the ``OneVsOne`` wrapper instead of the OVA one.
+As expected, it could also learn the data distribution, this can be seen by the decision boundary shown at :numref:`blobs-contour-ovo-perc`.
 
 .. figure:: images/classification/contour-blobs-ovo.png
   :width: 450
