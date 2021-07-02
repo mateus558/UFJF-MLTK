@@ -57,7 +57,7 @@ Including to your CMake project
 
 Following are minimal scripts to include ufjfmltk to your CMake project. The first method is by simply cloning
 ufjfmltk repository into the main project folder and include it with ``add_subdirectory``, it's a good method if
-you wish to use the latest updates on the framework, but it may break your application in future updates.:: 
+you wish to use the latest updates on the framework, but it may break your application in future updates.
 
 .. code-block:: cpp
 
@@ -67,8 +67,8 @@ you wish to use the latest updates on the framework, but it may break your appli
     set(CMAKE_CXX_STANDARD 17)
 
     add_subdirectory(ufjfmltk)
-
     add_executable(project_name main.cpp)
+
 
 The second and most recommended method is by using ``FetchContent``, with this approach you need to select one of the releases on the repository
 and copy the link to its code ``tar.gz`` file, this way you garantee that your project will work even when the framework receive major updates.
@@ -77,7 +77,6 @@ and copy the link to its code ``tar.gz`` file, this way you garantee that your p
 
     cmake_minimum_required(VERSION 3.15)
     project(project_name)
-
     set(CMAKE_CXX_STANDARD 17)
 
     include(FetchContent)
@@ -87,6 +86,7 @@ and copy the link to its code ``tar.gz`` file, this way you garantee that your p
             URL https://github.com/mateus558/UFJF-Machine-Learning-Toolkit/archive/refs/tags/v0.51.1-beta.7.tar.gz
     )
     FetchContent_MakeAvailable(ufjfmltk)
+
     add_executable(project_name main.cpp)
     target_link_libraries(project_name ufjfmltk)
 
