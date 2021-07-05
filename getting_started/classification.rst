@@ -79,8 +79,6 @@ to minimize a loss function, we can say that the separating hyperplane is constr
         perceptron.train();
 
         vis.plot2DwithHyperplane(1, 2, perceptron.getSolution(), true);
-
-        return 0;
     }
 
 On :numref:`primal-perc` we can see a simple usage of the **UFJF-MLTK** perceptron implementation in it's primal form. In this example we first
@@ -157,7 +155,6 @@ we'll use **UFJF-MLTK** implementation to solve the spirals dataset problem pres
         perceptron.train();
 
         vis.plotDecisionSurface2D(perceptron, 0, 1, true, 100);
-        return 0;
     }
 
 :numref:`dualperc-spirals` example generates a spirals 
@@ -248,7 +245,6 @@ the base algorithm parameters must be passed on its initialization or before cal
         ova.train();
 
         vis.plotDecisionSurface2D(ova, 0, 1, true, 100, true);
-        return 0;
     }
 
 :numref:`blobs-contour-ova-perc` shows the decision boundary generated after training, it's possible to note that 
@@ -295,8 +291,6 @@ via majority vote [MEHRYAR2018]_:
         ovo.train();
 
         vis.plotDecisionSurface2D(ovo, 0, 1, true, 100, true);
-
-        return 0;
     }
 
 :numref:`ovo-example` is analogous to :numref:`ova-example` except that it's using the ``OneVsOne`` wrapper instead of the OVA one.
@@ -398,14 +392,92 @@ Holdout method and random subsampling
 
 With the **holdout** method the data is randomly partitioned in two independent sets, the *training set* and the *test set*. Usually, two thirds of the data is reserved for
 training and one third for testing. The training set is used to train the model and the test set for estimating the accuracy. The problem of this method is that it usually 
-pessimistic because only a portion of the data is used to derive the model.
+pessimistic because only a portion of the data is used to derive the model. The holdout accuracy estimation process is illustrated in :numref:`holdout-method` [HAN2011]_.
+
+.. figure:: images/classification/holdout-method.png
+  :width: 450
+  :name: holdout-method
+  :align: center
+  :alt: Accuracy estimation with the holdout method.
+
+  Accuracy estimation with the holdout method.
 
 **Random subsampling** is a variation of the holdout method where the holdout method is repeated :math:`k` times. The accuracy estimate is given as the average of the 
-accuracies obtained from each iteration.
+accuracies obtained from each iteration [HAN2011]_.
+
+
+:numref:`holdout-example` loads the iris dataset for a multi-class classification task and splits the dataset in a training and test set pair.
+The data split is done dividing the data, in a stratified manner by default, in 3 folds and selects one of them for the test set and merge the other ones into a training set. After the data split,
+the OVA wrapper is instantiated with an object from the perceptron wrapper and the training set. Finally, the model is trained and the accuracy is 
+estimated on the test set.
+
+.. code-block:: cpp
+  :emphasize-lines: 11,15
+  :name: holdout-example
+  :caption: holdout accuracy estimation on iris dataset.
+
+  #include <iostream>
+  #include <ufjfmltk/ufjfmltk.hpp>
+
+  namespace classifier = mltk::classifier;
+  namespace valid = mltk::validation;
+
+  int main() {
+      mltk::Data<> data("iris_mult.csv");
+      valid::TrainTestPair traintest = valid::partTrainTest(data, 3);
+      classifier::PerceptronPrimal<double> perc;
+      classifier::OneVsAll<double> ova(traintest.train, perc);
+
+      ova.train();
+
+      std::cout << "Accuracy = " << valid::accuracy(traintest.test, ova) * 100.0 << std::endl;
+  }
+
 
 
 Cross-validation
 ^^^^^^^^^^^^^^^^
+
+In **k-fold cross-validation** the data is partitioned in :math:`k` mutually independent sets or *folds* :math:`D_1, D_2, ..., D_k` of approximately equal size, performing training and testing :math:`k` times. 
+On each iteration :math:`i` the i-th partition is used as test set and the :math:`k-1` remaining partitions as training data. Unlike the holdout and random subsampling methods, here the folds are used for training k times and
+once for testing. For classification, the accuracy is given by the number of correct classifications divided by the total number of samples on the initial data [HAN2011]_.
+
+.. figure:: images/classification/kfold-cv.png
+  :width: 450
+  :name: kfold-cv
+  :align: center
+  :alt: k-fold cross validation process.
+
+  k-fold cross validation process. Fonte: `Towards data science <https://towardsdatascience.com/cross-validation-explained-evaluating-estimator-performance-e51e5430ff85>`_
+
+**Leave-one-out** is a special case from k-fold cross-validation where k is set as the total number of samples, i.e, only one sample is used as test set. In **stratified cross-validation**
+the folds are stratified so the distribution of the data is approximately equal to the initial data distribution. In general, 10-fold cross validation is recommended for accuracy estimation due its low bias and variance [HAN2011]_.
+ 
+.. code-block:: cpp
+  :emphasize-lines: 10,12,14
+  :name: kfold-cv-example
+  :caption: k-fold cross-validation accuracy estimation on iris dataset.
+
+  #include <iostream>
+  #include <ufjfmltk/ufjfmltk.hpp>
+
+  namespace classifier = mltk::classifier;
+  namespace valid = mltk::validation;
+
+  int main() {
+      mltk::Data<> data("iris_mult.csv");
+      classifier::PerceptronPrimal<double> perc;
+      classifier::OneVsAll<double> ova(data, perc);
+
+      valid::ValidationReport report = valid::kfold(data, ova, 10);
+
+      std::cout << "Accuracy = " << report.accuracy << std::endl;
+  }
+
+
+:numref:`kfold-cv-example` loads the iris dataset for a multi-class classification task and instantiate the OVA wrapper with a perceptron wrapper object. After that, it calls the 
+k-fold cross-validation, stratified by default, with :math:`k=10` on OVA with all the dataset data generating a report with metrics from k-fold. Finally, it prints the k-fold accuracy
+on the screen.
 
 .. [SKIENA2017] Skiena, Steven S. The data science design manual. Springer, 2017.
 .. [VILLELA2011] Villela, Saulo Moraes, et al. "Seleção de Características utilizando Busca Ordenada e um Classificador de Larga Margem." (2011).
