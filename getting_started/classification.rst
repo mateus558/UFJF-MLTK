@@ -318,8 +318,90 @@ previous sales. For that, you need to estimate how accurately your model can be 
 several classifiers and need to compare how well they can be between each other [HAN2011]_. This section address metrics that can be used to compare those methods and how reliable this comparison can be.  
 
 
+Metrics for classifiers evaluation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The usage of training data for accuracy estimation of a classifier, can lead to overoptimistic estimates due to overspecialization of the model to the data.
+A better option to avoid this issue is to measure the classifier accuracy using a *test set*, that is are examples from the entire dataset that weren't used
+during model training [HAN2011]_.
+
+In this section we'll be discussing several metrics to measure a classifier performance, but before we need to be confortable with some terminologies that'll be 
+used throghout metrics definitions. Two important terms are **positive samples**, points labeled with the class of main interest, and **negative samples**, that are 
+the rest of the samples. Given two classes, for example, the positive samples may be *buy_computer = yes* and the negative samples *buy_computer = no*. Supose 
+a classifier is used on a *test set* of labeled data. :math:`P` is the number of positive samples and :math:`N` is the number of negative samples. for each sample we compare
+For each sample, we compare the predictions made by the classifier with the sample known class. There are four other terms that must be understood since they are the 
+building blocks of many evaluation measures computations [HAN2011]_.
+
+* **True positives** (TP): positive samples that were correctly labeled by the classifier;
+* **True negatives** (TN): negative samples that were correctly labeled by the classifier;
+* **False positives** (FP): positive samples that were incorrectly labeled as negative;
+* **False negatives** (FN): negative samples that were incorrectly labeled as positive;
+
+A **confusion matrix** is a tool used to analyse if the classifier is doing well on prediction of examples of different classes. TP and 
+TN indicates if the classifier is labeling right. FN and FP tells when the classifier is doing wrong predictions. These terms are sumarized
+on the confusion matrix from :numref:`cfm-example`. It's a matrix at least  of size *m* x *m* where *m* is the number of classes, an entry 
+:math:`CM_{ij}` represents the number of examples from class :math:`i` that were labeled as :math:`j` [HAN2011]_. 
+
+
+.. table:: Confusion matrix where the lines represent the **actual class** and the columns the **predicted class**.
+  :align: center
+  :name: cfm-example
+
+  +-------+-------+-------+
+  |       | *yes* |  *no* |
+  +-------+-------+-------+
+  |*yes*  |    TP |    FN |
+  +-------+-------+-------+
+  | *no*  |    FP |    TN |
+  +-------+-------+-------+
+  |*Total*|    P' |    N' |
+  +-------+-------+-------+
+
+
+Below is a list of important metrics for classifiers evaluation and selection:
+
+* **Accuracy**: percentage of examples on the test set that were correctly classified.
+
+.. math::
+
+  accuracy = \frac{TP + TN}{P + N}
+
+* **Error rate**: is :math:`1 - accuracy(M)` where :math:`accuracy(M)` is 
+the accuracy of the classifier :math:`M`. It can also be computed as follows:
+
+.. math::
+
+  error\;rate = \frac{FP + FN}{P + N}
+
+* **Sensitivity** and **Specificity**: are the proportion of the positive samples that were correctly classified and the true negative proportion, respectively. 
+
+.. math::
+
+  sensitivity = \frac{TP}{P}
+
+  specificity = \frac{TN}{N} 
+
+* **Precision**: can be thought as a measure of exactness, i.e, the percentage of examples labeled as positive are actually such.
+
+.. math::
+
+  precision = \frac{TP}{TP + FP}
+
+* **Recall**: is a measure of completeness, i.e, the percentage of positive samples labeled as such, the same as *sensitivity*.
+
+.. math::
+
+  recall = \frac{TP}{TP + FN}
+
 Holdout method and random subsampling
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+With the **holdout** method the data is randomly partitioned in two independent sets, the *training set* and the *test set*. Usually, two thirds of the data is reserved for
+training and one third for testing. The training set is used to train the model and the test set for estimating the accuracy. The problem of this method is that it usually 
+pessimistic because only a portion of the data is used to derive the model.
+
+**Random subsampling** is a variation of the holdout method where the holdout method is repeated :math:`k` times. The accuracy estimate is given as the average of the 
+accuracies obtained from each iteration.
 
 
 Cross-validation
