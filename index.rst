@@ -58,7 +58,7 @@ Feel free to contact me at any time to clear doubts that you could have and if y
    :caption: Table of contents
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Framework overview
    :hidden:
    
@@ -73,11 +73,12 @@ Feel free to contact me at any time to clear doubts that you could have and if y
    getting_started/installation
    getting_started/datamanagement
    getting_started/classification
-   
+
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Contribute
    :hidden:
    
+   contribute/extending
    contribute/codeconduct
    license
