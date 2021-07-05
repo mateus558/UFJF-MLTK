@@ -387,6 +387,43 @@ the accuracy of the classifier :math:`M`. It can also be computed as follows:
 
   recall = \frac{TP}{TP + FN}
 
+.. code-block:: cpp
+  :linenos:
+  :name: metrics-example
+  :caption: metrics computation for KNN classifier on spirals dataset.
+
+  #include <iostream>
+  #include <ufjfmltk/ufjfmltk.hpp>
+
+  namespace classifier = mltk::classifier;
+  namespace valid = mltk::validation;
+
+  int main() {
+      auto data = mltk::datasets::make_spirals(500, 3, true, 2);
+      valid::TrainTestPair traintest = valid::partTrainTest(data, 3);
+      classifier::KNNClassifier<double> knn(traintest.train, 3);
+
+      auto cfm = valid::generateConfusionMatrix(traintest.test, knn);
+      valid::ValidationReport report = valid::metricsReport(traintest.test, cfm);
+
+      std::cout << "True positive = " << report.tp << std::endl;
+      std::cout << "True negative = " << report.tn << std::endl;
+      std::cout << "False positive = " << report.fp << std::endl;
+      std::cout << "False negative = " << report.fn << std::endl;
+      std::cout << "Errors = " << report.errors << std::endl;
+      std::cout << "Accuracy = " << report.accuracy*100.0 << std::endl;
+      std::cout << "Error = " << report.error*100.0 << std::endl;
+
+      mltk::utils::printConfusionMatrix(data.classes(), data.classesNames(), cfm);
+  }
+    
+
+:numref:`metrics-example` shows how to compute some of the earlier mentionated metrics. On Lines 8-10 the program
+generates an instance of the spirals artificial dataset, split the data in training and test sets (see the next section) and 
+create an object of the KNN classifier algorithm wrapper. After that, on Lines 12-13 the confusion matrix ``cfm`` is generated to
+be used by the ``metricsReport`` method, that evaluate the metrics of the model on the passed data and returns it as a ``ValidationReport`` object.
+From Line 15 to 21 some metrics are printed and, finally, the program prints the confusion matrix on the screen and exits. 
+
 Holdout method and random subsampling
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
