@@ -387,6 +387,15 @@ the accuracy of the classifier :math:`M`. It can also be computed as follows:
 
   recall = \frac{TP}{TP + FN}
 
+
+* **F-score**: can be viewed as a weighted average of the *precision* and *recall*. It reaches its best value at 1 and the worst 
+  at zero. Both precision and recall have the same contribution to the F-score.
+
+.. math::
+
+  F-score = \frac{2(precision * recall)}{precision + recall} 
+
+
 .. code-block:: cpp
   :linenos:
   :emphasize-lines: 9,10,12,13,15,16,17,18,19,20,21,23
