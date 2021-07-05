@@ -329,7 +329,7 @@ building blocks of many evaluation measures computations [HAN2011]_.
 * **True positives** (TP): positive samples that were correctly labeled by the classifier;
 * **True negatives** (TN): negative samples that were correctly labeled by the classifier;
 * **False positives** (FP): positive samples that were incorrectly labeled as negative;
-* **False negatives** (FN): negative samples that were incorrectly labeled as positive;
+* **False negatives** (FN): negative samples that were incorrectly labeled as positive.
 
 A **confusion matrix** is a tool used to analyse if the classifier is doing well on prediction of examples of different classes. TP and 
 TN indicates if the classifier is labeling right. FN and FP tells when the classifier is doing wrong predictions. These terms are sumarized
