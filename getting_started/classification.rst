@@ -448,7 +448,7 @@ once for testing. For classification, the accuracy is given by the number of cor
   :align: center
   :alt: k-fold cross validation process.
 
-  k-fold cross validation process. Fonte: `Towards data science <https://towardsdatascience.com/cross-validation-explained-evaluating-estimator-performance-e51e5430ff85>`_
+  k-fold cross validation process. Source: `Towards data science <https://towardsdatascience.com/cross-validation-explained-evaluating-estimator-performance-e51e5430ff85>`_
 
 **Leave-one-out** is a special case from k-fold cross-validation where k is set as the total number of samples, i.e, only one sample is used as test set. In **stratified cross-validation**
 the folds are stratified so the distribution of the data is approximately equal to the initial data distribution. In general, 10-fold cross validation is recommended for accuracy estimation due its low bias and variance [HAN2011]_.
