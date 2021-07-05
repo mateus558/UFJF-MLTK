@@ -389,6 +389,7 @@ the accuracy of the classifier :math:`M`. It can also be computed as follows:
 
 .. code-block:: cpp
   :linenos:
+  :emphasize-lines: 9,10,12,13,15,16,17,18,19,20,21,23
   :name: metrics-example
   :caption: metrics computation for KNN classifier on spirals dataset.
 
@@ -449,7 +450,7 @@ the OVA wrapper is instantiated with an object from the perceptron wrapper and t
 estimated on the test set.
 
 .. code-block:: cpp
-  :emphasize-lines: 11,15
+  :emphasize-lines: 9,11,15
   :name: holdout-example
   :caption: holdout accuracy estimation on iris dataset.
 
