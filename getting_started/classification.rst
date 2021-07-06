@@ -360,8 +360,7 @@ Below is a list of important metrics for classifiers evaluation and selection:
 
   accuracy = \frac{TP + TN}{P + N}
 
-* **Error rate**: is :math:`1 - accuracy(M)` where :math:`accuracy(M)` is 
-the accuracy of the classifier :math:`M`. It can also be computed as follows:
+* **Error rate**: is :math:`1 - accuracy(M)` where :math:`accuracy(M)` is the accuracy of the classifier :math:`M`. It can also be computed as follows:
 
 .. math::
 
