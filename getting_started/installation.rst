@@ -65,9 +65,11 @@ you wish to use the latest updates on the framework, but it may break your appli
     project(project_name)
 
     set(CMAKE_CXX_STANDARD 17)
-
-    add_subdirectory(ufjfmltk)
+    
+    # mltk is a folder with ufjfmltk project
+    add_subdirectory(mltk)
     add_executable(project_name main.cpp)
+    target_link_libraries(project_name ufjfmltk)
 
 
 The second and most recommended method is by using ``FetchContent``, with this approach you need to select one of the releases on the repository
