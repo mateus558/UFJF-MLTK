@@ -74,6 +74,7 @@ Feel free to contact me at any time to clear doubts that you could have and if y
    getting_started/datamanagement
    getting_started/classification
    getting_started/regression
+   getting_started/clustering
 
 .. toctree::
    :maxdepth: 2
