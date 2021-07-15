@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['parttraintest_646',['partTrainTest',['../namespacemltk_1_1validation.html#a6a89b907ca7b580d282aeca71092eec1',1,'mltk::validation']]],
+  ['plot1dregresion_647',['plot1DRegresion',['../classmltk_1_1visualize_1_1Visualization.html#a4975b47781081f7e27acfac471ae4e61',1,'mltk::visualize::Visualization']]],
+  ['plot1dregresionhyperplane_648',['plot1DRegresionHyperplane',['../classmltk_1_1visualize_1_1Visualization.html#af3313d93a840f8eb73902260e87e5d7c',1,'mltk::visualize::Visualization']]],
+  ['plot2d_649',['plot2D',['../classmltk_1_1visualize_1_1Visualization.html#a3c5d2a92e93a3e8dae8538370f86acbe',1,'mltk::visualize::Visualization']]],
+  ['plot2dregresion_650',['plot2DRegresion',['../classmltk_1_1visualize_1_1Visualization.html#abede182c575320d8b0cbef2889c95ad8',1,'mltk::visualize::Visualization']]],
+  ['plot2dregresionhyperplane_651',['plot2DRegresionHyperplane',['../classmltk_1_1visualize_1_1Visualization.html#acc9236cdffe052362ca7e1988244fdb0',1,'mltk::visualize::Visualization']]],
+  ['plot2dwithhyperplane_652',['plot2DwithHyperplane',['../classmltk_1_1visualize_1_1Visualization.html#a03f28420ca170ab0eac9cd370d838fe4',1,'mltk::visualize::Visualization']]],
+  ['plot3d_653',['plot3D',['../classmltk_1_1visualize_1_1Visualization.html#a1d7146ff98a9de55c27f40c5aa0ac731',1,'mltk::visualize::Visualization']]],
+  ['plot3dwithhyperplane_654',['plot3DwithHyperplane',['../classmltk_1_1visualize_1_1Visualization.html#ab928298f94b42ac9ec23d15e53f90dd4',1,'mltk::visualize::Visualization']]],
+  ['plot_5fequation_655',['plot_equation',['../classGnuplot.html#a42dfb8c9d4636745c7be277ed818e849',1,'Gnuplot']]],
+  ['plot_5fequation3d_656',['plot_equation3d',['../classGnuplot.html#a79aed3a6927f7d1d3497cba441e8a943',1,'Gnuplot']]],
+  ['plot_5fimage_657',['plot_image',['../classGnuplot.html#aae22c0470a6fbbc1f5e84dec8d023381',1,'Gnuplot']]],
+  ['plot_5fslope_658',['plot_slope',['../classGnuplot.html#a51ea5105eb87285820bb93910f8d346c',1,'Gnuplot']]],
+  ['plot_5fx_659',['plot_x',['../classGnuplot.html#a6d3b7155f3e9e38768e5135a703b17f1',1,'Gnuplot']]],
+  ['plot_5fxy_660',['plot_xy',['../classGnuplot.html#a0e5005d2c83dc172765a668a3f17b86e',1,'Gnuplot']]],
+  ['plot_5fxy_5ferr_661',['plot_xy_err',['../classGnuplot.html#a9b53e67de489ee7baffa4a1ea0eadd28',1,'Gnuplot']]],
+  ['plot_5fxyz_662',['plot_xyz',['../classGnuplot.html#ad40582bda7039d8a4c3f14d6ed7ca3d0',1,'Gnuplot']]],
+  ['plotdecisionsurface2d_663',['plotDecisionSurface2D',['../classmltk_1_1visualize_1_1Visualization.html#a54921f376e02dc9365957a189c09c4f7',1,'mltk::visualize::Visualization']]],
+  ['plotfile_5fx_664',['plotfile_x',['../classGnuplot.html#a4fc34218cdfdd27a65b92eea1f1f9e84',1,'Gnuplot']]],
+  ['plotfile_5fxy_665',['plotfile_xy',['../classGnuplot.html#a10e1fc7344bd726faa2d70cd5ced5e5e',1,'Gnuplot']]],
+  ['plotfile_5fxy_5ferr_666',['plotfile_xy_err',['../classGnuplot.html#afe9d44ba12f617188111ab915010f3ab',1,'Gnuplot']]],
+  ['plotfile_5fxyz_667',['plotfile_xyz',['../classGnuplot.html#a9dbde2a91eb816481657f3a22c9b0046',1,'Gnuplot']]],
+  ['point_668',['point',['../classmltk_1_1Data.html#a58c3c16238ebdd0369b94aecae1d22cb',1,'mltk::Data::point()'],['../classmltk_1_1Point.html#aefaea871c16151b27431a24436bae45d',1,'mltk::Point::Point()'],['../classmltk_1_1Point.html#a33ab7a09caccc0e0d8279be617b1d4e5',1,'mltk::Point::Point(std::size_t s)'],['../classmltk_1_1Point.html#a77b02e0de569c288fca138c3057e0504',1,'mltk::Point::Point(std::size_t s, const T &amp;value, const std::size_t &amp;id=0)'],['../classmltk_1_1Point.html#a72ca99e091c9329bd89384206f792fdd',1,'mltk::Point::Point(Rep const &amp;rb)']]],
+  ['points_669',['points',['../classmltk_1_1Data.html#ad5d773016a9d9200c46019348ecffb53',1,'mltk::Data::points()'],['../classmltk_1_1Data.html#aef2f7f296176275d0c0721ae1d210b91',1,'mltk::Data::points() const']]]
+];

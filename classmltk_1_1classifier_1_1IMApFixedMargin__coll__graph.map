@@ -1,0 +1,15 @@
+<map id="mltk::classifier::IMApFixedMargin&lt; T &gt;" name="mltk::classifier::IMApFixedMargin&lt; T &gt;">
+<area shape="rect" id="node1" title="Wrapper for the implementation of the Incremental Margin Algorithm primal with fixed margin." alt="" coords="1271,303,1464,344"/>
+<area shape="rect" id="node2" href="$classmltk_1_1classifier_1_1PrimalClassifier.html" title=" " alt="" coords="1053,303,1221,344"/>
+<area shape="rect" id="node3" href="$classmltk_1_1classifier_1_1Classifier.html" title=" " alt="" coords="817,184,1004,225"/>
+<area shape="rect" id="node4" href="$classmltk_1_1Learner.html" title=" " alt="" coords="529,71,712,98"/>
+<area shape="rect" id="node5" title=" " alt="" coords="247,5,411,47"/>
+<area shape="rect" id="node6" href="$classmltk_1_1Data.html" title=" " alt="" coords="5,13,171,39"/>
+<area shape="rect" id="node7" href="$classmltk_1_1Timer.html" title="Wrapper for the implementation of a simple timer." alt="" coords="279,71,378,98"/>
+<area shape="rect" id="node8" title=" " alt="" coords="549,139,693,180"/>
+<area shape="rect" id="node9" href="$classmltk_1_1Point.html" title=" " alt="" coords="245,146,412,173"/>
+<area shape="rect" id="node10" href="$classmltk_1_1Solution.html" title=" " alt="" coords="564,222,677,249"/>
+<area shape="rect" id="node11" title=" " alt="" coords="259,219,398,246"/>
+<area shape="rect" id="node12" href="$classmltk_1_1Kernel.html" title=" " alt="" coords="241,270,416,297"/>
+<area shape="rect" id="node13" title=" " alt="" coords="246,337,411,363"/>
+</map>

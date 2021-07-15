@@ -1,0 +1,19 @@
+<map id="mltk::classifier::Classifier&lt; T &gt;" name="mltk::classifier::Classifier&lt; T &gt;">
+<area shape="rect" id="node1" title=" " alt="" coords="200,410,424,437"/>
+<area shape="rect" id="node3" href="$classmltk_1_1classifier_1_1DualClassifier.html" title=" " alt="" coords="486,286,741,313"/>
+<area shape="rect" id="node9" href="$classmltk_1_1classifier_1_1PrimalClassifier.html" title=" " alt="" coords="529,165,697,207"/>
+<area shape="rect" id="node13" href="$classmltk_1_1ensemble_1_1AdaBoostClassifier.html" title=" " alt="" coords="516,337,711,379"/>
+<area shape="rect" id="node14" href="$classmltk_1_1ensemble_1_1AutoWeightedVoting.html" title=" " alt="" coords="502,403,725,444"/>
+<area shape="rect" id="node15" href="$classmltk_1_1ensemble_1_1BaggingClassifier.html" title=" " alt="" coords="472,469,755,495"/>
+<area shape="rect" id="node16" href="$classmltk_1_1ensemble_1_1PerceptronCommittee.html" title=" " alt="" coords="512,520,715,561"/>
+<area shape="rect" id="node17" href="$classmltk_1_1ensemble_1_1VotingClassifier.html" title=" " alt="" coords="478,586,749,613"/>
+<area shape="rect" id="node2" href="$classmltk_1_1Learner.html" title=" " alt="" coords="5,410,152,437"/>
+<area shape="rect" id="node4" href="$classmltk_1_1classifier_1_1OneVsAll.html" title="Wrapper for the implementation of the one vs all multi class classification algorithm." alt="" coords="807,202,1030,229"/>
+<area shape="rect" id="node5" href="$classmltk_1_1classifier_1_1OneVsOne.html" title="Wrapper for the implementation of the one vs one multi class classification algorithm." alt="" coords="803,253,1035,279"/>
+<area shape="rect" id="node6" href="$classmltk_1_1classifier_1_1PerceptronDual.html" title="Wrapper for the implementation of the Perceptron dual algorithm." alt="" coords="821,304,1017,345"/>
+<area shape="rect" id="node7" href="$classmltk_1_1classifier_1_1PerceptronFixedMarginDual.html" title="Wrapper for the implementation of the Perceptron dual with fixed margin algorithm." alt="" coords="821,369,1017,411"/>
+<area shape="rect" id="node8" href="$classmltk_1_1classifier_1_1SMO.html" title=" " alt="" coords="821,435,1016,462"/>
+<area shape="rect" id="node10" href="$classmltk_1_1classifier_1_1BalancedPerceptron.html" title=" " alt="" coords="825,5,1012,47"/>
+<area shape="rect" id="node11" href="$classmltk_1_1classifier_1_1PerceptronFixedMarginPrimal.html" title="Wrapper for the implementation of the Perceptron primal with fixed margin algorithm." alt="" coords="821,71,1017,112"/>
+<area shape="rect" id="node12" href="$classmltk_1_1classifier_1_1PerceptronPrimal.html" title="Wrapper for the implementation of the Perceptron primal algorithm." alt="" coords="821,136,1017,177"/>
+</map>

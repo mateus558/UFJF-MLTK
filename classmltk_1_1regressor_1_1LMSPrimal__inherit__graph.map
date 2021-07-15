@@ -1,0 +1,6 @@
+<map id="mltk::regressor::LMSPrimal&lt; T &gt;" name="mltk::regressor::LMSPrimal&lt; T &gt;">
+<area shape="rect" id="node1" title="Wrapper for the implementation of the Least Mean Square primal algorithm." alt="" coords="5,259,241,285"/>
+<area shape="rect" id="node2" href="$classmltk_1_1regressor_1_1PrimalRegressor.html" title=" " alt="" coords="5,169,241,211"/>
+<area shape="rect" id="node3" href="$classmltk_1_1regressor_1_1Regressor.html" title=" " alt="" coords="26,80,221,121"/>
+<area shape="rect" id="node4" href="$classmltk_1_1Learner.html" title=" " alt="" coords="32,5,215,32"/>
+</map>
