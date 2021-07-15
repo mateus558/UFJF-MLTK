@@ -73,6 +73,11 @@ the search by a good feature subset [VILLELA2011]_.
 Recursive Feature Elimination (RFE)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+This method works by removing a fixed number of features at a time. The features selected for removal
+at each step are those that have the smallest rankings computed using a classifier trained after each removal.
+The elimination of only one feature at a time generates a classifier with less errors. For computational reasons,
+its prefered to remove several features at a time, at the expense of the classifier degradation [GUYON2002]_.
+
 .. code-block:: cpp
 
     #include <ufjfmltk/ufjfmltk.hpp>
@@ -95,6 +100,9 @@ Recursive Feature Elimination (RFE)
 Admissible Ordered Search (AOS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+This wrapper method uses as predictor a large margin classifier, such as IMA [VILLELA2016]_. For each dimension, it finds the 
+classifier with the largest margin [VILLELA2015]_. *TODO*
+
 .. code-block:: cpp
 
     #include <ufjfmltk/ufjfmltk.hpp>
@@ -114,3 +122,6 @@ Admissible Ordered Search (AOS)
     }
 
 .. [VILLELA2011] Villela, Saulo Moraes, et al. "Seleção de Características utilizando Busca Ordenada e um Classificador de Larga Margem." (2011).
+.. [GUYON2002] Guyon, Isabelle, et al. "Gene selection for cancer classification using support vector machines." Machine learning 46.1 (2002): 389-422.
+.. [VILLELA2015] Villela, Saulo Moraes, Saul de Castro Leite, and Raul Fonseca Neto. "Feature selection from microarray data via an ordered search with projected margin." Twenty-Fourth International Joint Conference on Artificial Intelligence. 2015.
+.. [VILLELA2016] Villela, Saulo Moraes, Saul de Castro Leite, and Raul Fonseca Neto. "Incremental p-margin algorithm for classification with arbitrary norm." Pattern Recognition 55 (2016): 261-272.
