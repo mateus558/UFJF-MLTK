@@ -59,18 +59,17 @@ Feel free to contact me at any time to clear doubts that you could have and if y
 
 .. toctree::
    :maxdepth: 2
-   :caption: Framework overview
+   :caption: UFJF - Machine Learning Toolkit
    :hidden:
    
-   overview/modules
-   overview/architecture
+   overview/overview
+   overview/installation
 
 .. toctree::
    :maxdepth: 3
    :caption: Getting Started
    :hidden:
     
-   getting_started/installation
    getting_started/datamanagement
    getting_started/classification
    getting_started/featselection
